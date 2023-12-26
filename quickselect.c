@@ -50,12 +50,14 @@ int main(int argc, char** argv)
 
 	printf("%d\n", nthSmallest);
 
+	fclose(nums);	
+
 	return 0;
 }
 
 int quickSelect(int* arr, int arrSize, int nth) //nth smallest element
 {
-	if (nth > arrSize)
+	if (nth > arrSize || nth <= 0)
 	{
 		fprintf(stderr, "out of bounds!\n");
 		free(arr);
